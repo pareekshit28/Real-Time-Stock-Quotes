@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
-        final String clientId = "N61183";
-        final String password = "trade456";
+        final String clientId = "";
+        final String password = "";
 
         CompletableFuture<User> future = CompletableFuture.supplyAsync(() -> smartConnect.generateSession(clientId,password));
 
@@ -84,25 +84,4 @@ public class MainActivity extends AppCompatActivity {
         });
         instrumentsList.setAdapter(adapter);
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        viewModel.disconnectKiteTicker();
-    }
-
-//    private void kiteLogin(KiteConnect kiteSdk, String requestToken){
-//        try {
-//            User user = kiteSdk.generateSession(requestToken, "qs6mkmkcwitr0ihopn4t0ylb7oryyd1b");
-//            kiteSdk.setAccessToken(user.accessToken);
-//            kiteSdk.setPublicToken(user.publicToken);
-//            viewModel.connectKiteTicker();
-//        } catch (KiteException e) {
-//            e.printStackTrace();
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 }
